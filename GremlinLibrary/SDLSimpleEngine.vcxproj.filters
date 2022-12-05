@@ -15,27 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GremlinLibrary.cpp">
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\src\glad\src\glad.c">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="shader_s.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="vertexShader.vs">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="fragmentShader.fs">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

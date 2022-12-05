@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e5e7d15f-b868-4fec-b7bd-6d13879bb805}</ProjectGuid>
-    <RootNamespace>GremlinLibrary</RootNamespace>
+    <ProjectGuid>{cc790337-a30f-4d3e-a5c6-2557e9da08f5}</ProjectGuid>
+    <RootNamespace>SDLSimpleEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,25 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-    <ExternalIncludePath>C:\src\glfw-3.3.8.bin.WIN64\include\;C:\src\glad\include\;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\src\glfw-3.3.8.bin.WIN64\lib-vc2019\;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-    <ExternalIncludePath>C:\src\glfw-3.3.8.bin.WIN64\include\;C:\src\glad\include\;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\src\glfw-3.3.8.bin.WIN64\lib-vc2019\;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <ExternalIncludePath>C:\src\glfw-3.3.8.bin.WIN64\include\;C:\src\glad\include\;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\src\glfw-3.3.8.bin.WIN64\lib-vc2019\;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <ExternalIncludePath>C:\src\glfw-3.3.8.bin.WIN64\include\;C:\src\glad\include\;$(ExternalIncludePath)</ExternalIncludePath>
-    <LibraryPath>C:\src\glfw-3.3.8.bin.WIN64\lib-vc2019\;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\src\SDL2_image-2.6.2\include;C:\src\SDL2-2.24.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\src\SDL2_image-2.6.2\lib\x64;C:\src\SDL2-2.24.2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -100,7 +84,6 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,7 +100,6 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -130,7 +112,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,20 +129,10 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\src\glad\src\glad.c" />
-    <ClCompile Include="GremlinLibrary.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="shader_s.h" />
-    <ClInclude Include="stb_image.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="fragmentShader.fs" />
-    <None Include="vertexShader.vs" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
